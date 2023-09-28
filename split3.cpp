@@ -8,8 +8,8 @@ int main(void)
     string s;
     cin>>s;
 
-    s+=".";
-    string delimiter = ".";
+    s+="-";
+    string delimiter = "-";
 
     int pos;
     int curpos = 0;
@@ -18,19 +18,8 @@ int main(void)
     {
         int len = pos-curpos;
         string result = s.substr(curpos, len);
-        
-        if(curpos != 0)
-        {
-            cout<<".";
-            printf("%02d", stoi(result));
-        }
-        else
-        {
-            printf("%04d", stoi(result));
-        }
 
-
-
+        cout<<result;
         curpos = pos + 1;
     }
 
