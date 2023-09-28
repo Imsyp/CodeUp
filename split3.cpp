@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdio>
 #include <string>
 using namespace std;
 
@@ -7,8 +8,8 @@ int main(void)
     string s;
     cin>>s;
 
-    s+=":";
-    string delimiter = ":";
+    s+=".";
+    string delimiter = ".";
 
     int pos;
     int curpos = 0;
@@ -17,11 +18,19 @@ int main(void)
     {
         int len = pos-curpos;
         string result = s.substr(curpos, len);
-        cout<<result;
-        if(curpos == 0)
+        
+        if(curpos != 0)
         {
-            cout<<":";
+            cout<<".";
+            printf("%02d", stoi(result));
         }
+        else
+        {
+            printf("%04d", stoi(result));
+        }
+
+
+
         curpos = pos + 1;
     }
 
